@@ -1,0 +1,81 @@
+############################################
+# MaNGOS communicator configuration file   #
+############################################
+
+[CommunicatordConf]
+ConfVersion=2010062001
+
+###################################################################################################################
+# COMMUNICATOR SETTINGS
+#
+#    CommunicatorDatabaseInfo
+#        Database connection settings for the realm server.
+#        Default: hostname;port;username;password;database
+#                 .;somenumber;username;password;database - use named pipes at Windows
+#                       Named pipes: mySQL required adding "enable-named-pipe" to [mysqld] section my.ini
+#                 .;/path/to/unix_socket;username;password;database - use Unix sockets at Unix/Linux
+#                       Unix sockets: experimental, not tested
+#
+#    LogsDir
+#         Logs directory setting.
+#         Important: Logs dir must exists, or all logs be disable
+#         Default: "" - no log directory prefix. if used log names aren't absolute paths
+#                       then logs will be stored in the current directory of the running program.
+#
+#    LogLevel
+#        Server console level of logging
+#        0 = Minimum; 1 = Error; 2 = Detail; 3 = Full/Debug
+#        Default: 0
+#
+#    LogTime
+#        Include time in server console output [hh:mm:ss]
+#        Default: 0 (no time)
+#                 1 (print time)
+#
+#    LogFile
+#        Logfile name
+#        Default: "Realmd.log"
+#                 "" - empty name disable creating log file
+#
+#    LogTimestamp
+#        Logfile with timestamp of server start in name
+#        Default: 0 - no timestamp in name
+#                 1 - add timestamp in name in form Logname_YYYY-MM-DD_HH-MM-SS.Ext for Logname.Ext
+#
+#    LogFileLevel
+#        Server file level of logging
+#        0 = Minimum; 1 = Error; 2 = Detail; 3 = Full/Debug
+#        Default: 0
+#
+#    CommunicatorServerPort
+#         Port on which the server will listen
+#
+#    BindIP
+#         Bind Realm Server to specific IP address
+#         This option is useful for running multiple worldd/realmd instances
+#         on different IP addresses using default ports.
+#         DO NOT CHANGE THIS UNLESS YOU _REALLY_ KNOW WHAT YOU'RE DOING
+#
+#    NetworkThreads
+#         Count of network threads for input
+#
+#    JsonFolder
+#         Folder from which Jsons are taken, loaded and then deleted
+#
+#
+###################################################################################################################
+
+CommunicatorDatabaseInfo = "127.0.0.1;2045;mangos;mangos;voacommunicatord"
+CommunicatorServerPort = 4322
+BindIP = "0.0.0.0"
+NetworkThreads = 1
+LogsDir = ""
+LogFile = "Communicatord.log"
+LogLevel = 0
+LogTime = 0
+LogFile = "Communicatord.log"
+LogTimestamp = 0
+LogFileLevel = 0
+LogColors = ""
+JsonFolder = "Json"
+
